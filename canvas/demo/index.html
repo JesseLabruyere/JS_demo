@@ -1,0 +1,62 @@
+<html>
+	<head>
+
+		<title>Roomz</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="js/shared/jquery-1.12.0.js"></script>
+        <script type="text/javascript" src="js/jscroll.js"></script>
+		<script type="text/javascript" src="js/shared/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/shared/undoRedoStack.js"></script>
+
+		<link rel="stylesheet" href="css/canvas.css" />
+		<link rel="stylesheet" href="css/tmpunity.css" />
+        <!--<link rel="stylesheet" href="css/font-awesome.min.css" />-->
+        <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+	</head>
+
+<body>
+  <header>
+  	<!-- navigatiebar -->
+    <nav>
+      <ul>
+      	<a href="#"><li id="user"></li></a>
+        <a href="#"><li id="camera"></li></a>
+        <a onclick="openTextarea()"><li id="text"></li></a>
+        <a href="#"><li id="settings"></li></a>
+        <a href="#"><li id="video"></li></a>
+        <a href="#"><li id="switch"></li></a>
+        <a href="#"><li id="help">
+        <!--<img src="images/questionmark.png" onclick="window.open('http://localhost/waaierbalk3/help.html','Help', 'width=400,height=425,scrollbars=no,toolbar=no,location=no'); return false"></a>-->				</li></a>
+        
+        <li id="search-bar"><input name="search" type="text" placeholder="Search..."></li>
+      	<a href="#"><li id="search"></li></a>
+
+      </ul>
+    </nav>
+  </header>
+  
+  <div id="canvas">
+	<div id="container" style="top: 2px; left: 2px; position: absolute; transition-duration: 0s;">
+	</div>
+  </div>
+
+  <div id="unitywebapp" class="hidden"></div>
+
+  <form id="myForm">
+    <input type="file" name="image" id="imageBrowse" accept="image/*">
+  </form>
+  <!--<script src="usercheck.js"></script>-->
+  <script src="js/inbox.js"></script>
+  <script src="js/createTextInput.js"></script>
+  <script src="js/dropTextArea.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/saveImage.js"></script>
+  <script src="js/apiService.js"></script>
+  <script src="js/resourceRepository.js"></script>
+  <script src="js/camera_functions/cameraController.js"></script>
+  <script src="js/toaster.js"></script>
+  <script src="js/tmpunity.js"></script>
+  <script src="js/prototypes.js"></script>
+</body>
+</html>

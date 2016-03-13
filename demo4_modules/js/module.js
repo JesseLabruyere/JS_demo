@@ -12,6 +12,7 @@
  *
  */
 var module = (function ($, string, module) {
+
     // private
     function thisIsAPrivateFunction() {
         // this is a private function...
@@ -20,9 +21,19 @@ var module = (function ($, string, module) {
     //public
     module.thisIsAPublicFunction =  function () {
         // this is a public function...
+        console.log('Hi I am public!')
     };
 
     // This function return an object
     return module;
 
 }(jQuery, 'some string', module || {}));
+
+
+/**
+ * Run the demo
+ */
+function demo() {
+    module.thisIsAPublicFunction();
+    console.debug(module);
+}

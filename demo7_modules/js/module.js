@@ -16,12 +16,14 @@ var module = (function ($, string, module) {
     // private
     function thisIsAPrivateFunction() {
         // this is a private function...
+        console.log('Hi I am private!')
     }
 
     //public
     module.thisIsAPublicFunction =  function () {
         // this is a public function...
-        console.log('Hi I am public!')
+        console.log('Hi I am public!');
+        thisIsAPrivateFunction();
     };
 
     // This function return an object

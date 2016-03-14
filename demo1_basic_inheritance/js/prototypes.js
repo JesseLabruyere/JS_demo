@@ -1,8 +1,8 @@
 /**
  * In this inheritance example the subclass will inherit all properties of the base class.
  *
- * Based on: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
- * Comparison: http://stackoverflow.com/questions/13040684/javascript-inheritance-object-create-vs-new
+ * Based on: http://www.sitepoint.com/simple-inheritance-javascript/
+ * Comparison: http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
  * Prototypeof https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf
  */
 
@@ -30,11 +30,7 @@ function Animal(color, sound, age, name) {
      * Show an alert with the sound of the animal
      */
     this.makeSound = function () {
-        if(typeof(sound) != typeof(undefined))
-            alert(sound);
-        else {
-            alert('no sound')
-        }
+        alert(sound);
     };
 
     /**
@@ -57,17 +53,15 @@ function Animal(color, sound, age, name) {
  * @constructor
  */
 function Sheep(color, age, name) {
-    // call the parent constructor, this is needed otherwise the properties will not be inherited because the constructor is never called
-    Animal.call(this, color, 'Beh!', age, name);
+    // call the parent constructor, this is not always necessary since the constructor was already called once
+    Sheep.prototype.constructor(color, 'Beh!', age, name);
 
     this.shed = function () {
         return 'wool';
     };
 }
-// The Object.create() method creates a new object with the specified prototype object and properties,
-// this does not call the constructor of Animal.
-Sheep.prototype = Object.create(Animal.prototype);
-Sheep.prototype.constructor = Sheep;
+// Sheep inherits from Animal by setting an Animal object as prototype
+Sheep.prototype = new Animal();
 
 
 /**

@@ -8,7 +8,7 @@
 /**
  * What is happening here is that we define a function.
  * We also immediately after call that function
- * The resulting object is stores in a variable in this case called 'module'
+ * The resulting object is stored in a variable in this case called 'module'
  *
  */
 var module = (function ($, string, module) {

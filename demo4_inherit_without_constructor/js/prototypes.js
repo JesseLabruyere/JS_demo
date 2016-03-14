@@ -1,7 +1,8 @@
 /**
- * In this inheritance example the subclass will inherit all properties of the base class using a inheritance function.
+ * This is an example of prototype inheritance where only the functions are inherited
  *
- * Based on: http://www.sitepoint.com/simple-inheritance-javascript/
+ * Based on: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
+ * Also: http://stackoverflow.com/a/34778248
  */
 
 
@@ -37,27 +38,27 @@ function Animal(color, sound, age, name) {
     this.sound = sound;
     this.age = age;
     this.name = name;
-
-    /**
-     * Show an alert with the sound of the animal
-     */
-    this.makeSound = function () {
-        if(typeof(sound) != typeof(undefined))
-            alert(sound);
-        else {
-            alert('no sound')
-        }
-    };
-
-    /**
-     * Increase the age of the animal
-     *
-     * @param {int} years
-     */
-    this.increaseAge = function (years) {
-        this.age += years;
-    };
 }
+
+/**
+ * Show an alert with the sound of the animal
+ */
+Animal.prototype.makeSound = function () {
+    if(typeof(this.sound) != typeof(undefined))
+        alert(this.sound);
+    else {
+        alert('no sound')
+    }
+};
+
+/**
+ * Increase the age of the animal
+ *
+ * @param {int} years
+ */
+Animal.prototype.increaseAge = function (years) {
+    this.age += years;
+};
 
 
 /**
@@ -69,15 +70,20 @@ function Animal(color, sound, age, name) {
  * @constructor
  */
 function Sheep(color, age, name) {
-    // call the parent constructor, this is needed otherwise the properties will not be inherited because the constructor is never called
-    Animal.call(this, color, 'Beh!', age, name);
-
-    this.shed = function () {
-        return 'wool';
-    };
+    // We don't call the parent constructor we only want to inherit the functions
+    this.color = color;
+    this.sound = 'Beh!';
+    this.age = age;
+    this.name = name;
 }
-// Inheritance using the function
-inheritsFrom(Sheep, Animal);
+
+// Inheritance
+Sheep.prototype = Object.create(Animal.prototype);
+Sheep.prototype.constructor = Sheep;
+
+Sheep.prototype.shed = function () {
+    return 'wool';
+};
 
 
 /**
@@ -87,6 +93,7 @@ function demo() {
     var sheep = new Sheep('white', 6, 'dolly');
     console.log("Is this an animal?: " + Animal.prototype.isPrototypeOf(new Sheep()));
     console.log("Is this a sheep?: " + Sheep.prototype.isPrototypeOf(new Sheep()));
+    console.log(sheep.shed());
     console.debug(sheep);
     sheep.makeSound();
 }

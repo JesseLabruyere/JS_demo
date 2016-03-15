@@ -54,7 +54,7 @@ function Animal(color, sound, age, name) {
  */
 function Sheep(color, age, name) {
     // call the parent constructor, this is not always necessary since the constructor was already called once
-    Sheep.prototype.constructor(color, 'Beh!', age, name);
+    Animal.call(this, color, 'Beh!', age, name);
 
     this.shed = function () {
         return 'wool';

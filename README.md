@@ -1,5 +1,4 @@
-# JS Demo
-### Examples of prototyping and JavaScript design patterns
+# JS Demo ### Examples of prototyping and JavaScript design patterns
 
 ## Prototypes
 Prototypes are basically blueprint objects that can be used to create new objects.

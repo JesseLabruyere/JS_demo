@@ -1,7 +1,6 @@
 # JS Demo
 ### Examples of prototyping and JavaScript design patterns
 
-
 ## Prototypes
 Prototypes are basically blueprint objects that can be used to create new objects.
 
@@ -22,11 +21,11 @@ var animal = new Animal('brown', 'Wuff!', 2, 'Fidus');
 ```
 
 
-## Adding functions to Prototypes
+## Adding functions to prototypes
 It is possible to add functions to the prototype itself or to the object inside the constructor.
 Adding functions to the prototype is more flexible because it makes it possible to inherit the functions only later on.
 
-### Adding function to the prototype
+### Adding a function to the prototype
 ```
 function Animal(color, sound, age, name) {
     this.color = color;
@@ -40,7 +39,7 @@ Animal.prototype.makeSound = function () {
 };
 ```
 
-### Adding function to the object inside the constructor
+### Adding a function to the object inside the constructor
 ```
 function Animal(color, sound, age, name) {
     this.color = color;
@@ -186,7 +185,7 @@ There are ways to make private functions and properties using the module design 
 ```
 var Animal = (function() {
 
-    var privateProperty = 'I am a Private property'
+>    var privateProperty = 'I am a Private property'
 
     function Animal(color, sound, age, name) {
         this.color = color;
@@ -200,8 +199,8 @@ var Animal = (function() {
     }
 
     Animal.prototype.makeSound = function () {
-        privateFunction();
-        console.log(privateProperty);
+>        privateFunction();
+>        console.log(privateProperty);
 
         alert(this.sound);        
     };

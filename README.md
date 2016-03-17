@@ -35,7 +35,7 @@ function Animal(color, sound, age, name) {
 }
 
 Animal.prototype.makeSound = function () {
-    alert(sound);
+    alert(this.sound);
 };
 ```
 
@@ -48,7 +48,7 @@ function Animal(color, sound, age, name) {
     this.name = name;
     
     this.makeSound = function () {
-        alert(sound);
+        alert(this.sound);
     };
 }
 ```

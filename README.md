@@ -54,7 +54,7 @@ function Animal(color, sound, age, name) {
 ```
 
 You can call the functions in both examples normally on every object you create using the prototypes
-```
+```JS
 var animal = new Animal('brown', 'Wuff!', 2, 'Fidus');
 animal.makeSound();
 ```

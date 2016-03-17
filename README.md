@@ -5,7 +5,7 @@ Examples of prototyping and JavaScript design patterns
 Prototypes are basically blueprint objects that can be used to create new objects. All objects in JavaScript are descended from Object; all objects inherit methods and properties from Object.prototype, although they may be overridden (except an Object with a null prototype, i.e. Object.create(null)).
 
 A prototype function works as the constructor of the prototype that will be called when creating new objects of its type.
-```
+```JS
 function Animal(color, sound, age, name) {
     this.color = color;
     this.sound = sound;
@@ -16,7 +16,7 @@ function Animal(color, sound, age, name) {
 'this' refers to the current object, the new object that gets created when the constructor is called.
 
 You can create an object using a prototype.
-```
+```JS
 var animal = new Animal('brown', 'Wuff!', 2, 'Fidus');
 ```
 
@@ -26,7 +26,7 @@ It is possible to add functions to the prototype itself or to the object inside 
 Adding functions to the prototype is more flexible because it makes it possible to inherit the functions only later on.
 
 ### Adding a function to the prototype
-```
+```JS
 function Animal(color, sound, age, name) {
     this.color = color;
     this.sound = sound;
@@ -40,7 +40,7 @@ Animal.prototype.makeSound = function () {
 ```
 
 ### Adding a function to the object inside the constructor
-```
+```JS
 function Animal(color, sound, age, name) {
     this.color = color;
     this.sound = sound;
@@ -64,7 +64,7 @@ animal.makeSound();
 Inheritance with prototypes is a way of using a existing prototype with its functions as base for a new prototype. There are different ways to implement inheritance using prototypes. The first example is using 'object.create()'. This seems to be the most flexible way since the constructor is not called by default. The other way is by creating a new object instance of the parent prototype.
 
 ### Inheritance using object.create()
-```
+```JS
 function Animal(color, sound, age, name) {
     this.color = color;
     this.sound = sound;
@@ -91,7 +91,7 @@ You can see we pass the object that is being created to the constructor of Anima
 
 ### If we only want the functions
 If we only want the functions we can simply never call the parent constructor
-```
+```JS
 function Animal(color, sound, age, name) {
     this.color = color;
     this.sound = sound;
@@ -117,7 +117,7 @@ dog.makesound();
 ### Inheritance by setting the prototype to a new object instance of the parent prototype
 Using this way of configuring inheritance has the drawback that the parent constructor is always called (a new instance of Animal is created), this can be undesirable.
 When overriding functions the parent function will be lost, in the first implementation its still possible to call the overridden parent function.
-```
+```JS
 function Animal(color, sound, age, name) {
     this.color = color;
     this.sound = sound;
@@ -149,7 +149,7 @@ Functions that get inherited can be overridden. Depending on the way the prototy
 
 ### Override and call parent function
 In this example we override the function 'makeSound'. But we still call the parent function inside that function. We pass the current object using 'this'.
-```
+```JS
 function Animal(color, sound, age, name) {
     this.color = color;
     this.sound = sound;
@@ -182,7 +182,7 @@ dog.makesound();
 There are ways to make private functions and properties using the module design pattern. These private functions and properties can only be used by public functions. The way it works is by wrapping all declarations inside a wrapper function. This function returns the Animal prototype object. Only the properties and functions that are directly bound to the prototype are accessable outside the scope of the wrapper function.
 ### Private functions and properties - example 1
 In this example there is a private property and function defined inside the scope of the wrapper function. The property and function are used inside the public 'makesound' function of the prototype.
-```
+```JS
 var Animal = (function() {
 
     var privateProperty = 'I am a Private property';
@@ -219,7 +219,7 @@ animal.makeSound();
 
 ### Private functions and properties - example 2
 This example is almost the same as the first, the main difference is the way to functions are added to the object inside the prototype constructor function.
-```
+```JS
 var Animal = (function() {
 
     var privateProperty = 'I am a Private property';

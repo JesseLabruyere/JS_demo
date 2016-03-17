@@ -253,14 +253,23 @@ animal.makeSound();
 ## Sources
 
 Inheritance and the prototype chain: https://developer.mozilla.org/nl/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+
 Simple Inheritance with JavaScript: http://www.sitepoint.com/simple-inheritance-javascript/
+
 OOP In JavaScript: What You NEED to Know: http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
+
 Object.prototype.isPrototypeOf(): https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf
+
 JavaScript inheritance: Object.create vs new: http://stackoverflow.com/questions/13040684/javascript-inheritance-object-create-vs-new
+
 Simple Inheritance with JavaScript: http://www.sitepoint.com/simple-inheritance-javascript/
+
 Object.prototype: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
+
 Override function in JavaScript: http://stackoverflow.com/questions/11542192/override-function-in-javascript
+
 Implementing Private and Protected Members in JavaScript: http://philipwalton.com/articles/implementing-private-and-protected-members-in-javascript/
+
 JavaScript Module Pattern: In-Depth: http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
 
 

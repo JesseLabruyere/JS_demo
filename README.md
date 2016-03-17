@@ -2,7 +2,7 @@
 Examples of prototyping and JavaScript design patterns
 
 ## Prototypes
-Prototypes are basically blueprint objects that can be used to create new objects. All objects in JavaScript are descended from Object; all objects inherit methods and properties from Object.prototype, although they may be overridden (except an Object with a null prototype, i.e. Object.create(null)).
+Every JavaScript object has a prototype, a prototype itself is also an object. JavaScript objects inherit the functions and properties from their prototype. All objects in JavaScript are descended from Object; all objects inherit methods and properties from Object.prototype, although they may be overridden (except an Object with a null prototype, i.e. Object.create(null)).
 
 A prototype function works as the constructor of the prototype that will be called when creating new objects of its type.
 ```JS

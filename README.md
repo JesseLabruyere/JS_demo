@@ -129,10 +129,6 @@ function Animal(color, sound, age, name) {
     };
 }
 
-Animal.prototype.makeSound = function () {
-    alert(this.sound);
-};
-
 function Dog(color, sound, age, name, breed){
     Animal.call(this, color, sound, age, name)
     this.breed = breed;

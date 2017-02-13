@@ -214,7 +214,7 @@ animal.makeSound();
 ```
 
 ### Private functions and properties - example 2
-This example is almost the same as the first, the main difference is the way to functions are added to the object inside the prototype constructor function.
+This example is almost the same as the first, the main difference is the way the functions are added to the object inside the prototype constructor function.
 ```JS
 var Animal = (function() {
 
